@@ -10,7 +10,7 @@ function Details() {
           <img src={logo} alt="" />
         </a>
           <a class="header__team" href="#/">
-            <p>Equipo Palique</p>
+            <p></p>
           </a>
       </header>
       

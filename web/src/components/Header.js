@@ -4,10 +4,10 @@ const Header = () => {
   return (
     <header className="header">
       <Link to="/" className="header__logo">
-        <img src={equipo} alt="" />
+        {/* <img src={equipo} alt="" /> */}
       </Link>
       <Link to="/" className="header__team">
-        <p>Equipo Palique</p>
+        <p></p>
       </Link>
     </header>
   );

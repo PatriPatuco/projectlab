@@ -5,7 +5,7 @@ import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import { useState } from "react";
 import api from "../services/Api.js";
-import "../styles/App.scss";
+import "../styles/app.scss";
 import ls from "../services/LocalStorage";
 
 const CreateCard = () => {
