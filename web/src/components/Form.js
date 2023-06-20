@@ -1,5 +1,6 @@
 import GetAvatar from "./GetAvatar";
 import { Link } from "react-router-dom";
+import "../styles/app.scss";
 
 const Form = ({
   data,
@@ -15,8 +16,8 @@ const Form = ({
 
   return (
     <section className="form">
-     <Link to="/" className="form__back-btn">
-      <p >⬅ Volver</p>
+      <Link to="/" className="form__back-btn">
+        <p>⬅ Volver</p>
       </Link>
       <h2 className="form__title">Información</h2>
       <p className="form__subtitle">Cuéntanos sobre el proyecto</p>
@@ -35,10 +36,7 @@ const Form = ({
           onInput={handleInput}
           required
         />
-        <p className="form__message">
-        {" "}
-        {message.name}
-        </p>
+        <p className="form__message"> {message.name}</p>
         <input
           className="form__input"
           type="text"
@@ -49,10 +47,7 @@ const Form = ({
           onChange={handleInput}
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message">
-        {" "}
-        {message.slogan}
-        </p>
+        <p className="form__message"> {message.slogan}</p>
         <div className="form__project--links">
           <label className="form__label" htmlFor="repo">
             Repositorio<span className="span"> *</span>
@@ -67,10 +62,7 @@ const Form = ({
             onInput={handleInput}
             required
           />
-          <p className="form__message">
-          {" "}
-          {message.repo}
-          </p>
+          <p className="form__message"> {message.repo}</p>
           <label className="form__label" htmlFor="demo">
             Demo<span className="span"> *</span>
           </label>
@@ -85,10 +77,7 @@ const Form = ({
             required
             pattern="/^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
           />
-          <p className="form__message">
-        {" "}
-        {message.demo}
-        </p>
+          <p className="form__message"> {message.demo}</p>
         </div>
         <label className="form__label" htmlFor="technologies">
           Tecnologías<span className="span"> *</span>
@@ -103,10 +92,7 @@ const Form = ({
           onChange={handleInput}
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message">
-        {" "}
-        {message.slogan}
-        </p>
+        <p className="form__message"> {message.slogan}</p>
         <textarea
           className="form__textarea"
           type="text"
@@ -118,14 +104,8 @@ sólo un par de clicks."
           onChange={handleInput}
           required
         ></textarea>
-        <p className="form__message">
-        {" "}
-        {message.slogan}
-        </p>
+        <p className="form__message"> {message.slogan}</p>
       </fieldset>
-
-      <hr className="form__line" />
-      <p className="form__subtitle">Cuéntanos sobre la autora</p>
 
       <fieldset className="form__autor">
         <label className="form__label" htmlFor="autor">
@@ -142,10 +122,7 @@ sólo un par de clicks."
           required
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message">
-        {" "}
-        {message.slogan}
-        </p>
+        <p className="form__message"> {message.slogan}</p>
         <input
           className="form__input"
           type="text"
@@ -157,37 +134,35 @@ sólo un par de clicks."
           required
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message">
-        {" "}
-        {message.slogan}
-        </p>
-        <section className="form__autor--buttons">
-          <GetAvatar
-            value={"Subir foto de proyecto"}
-            className={"form__btn"}
-            updateAvatar={updateProjectImg}
-          />
-          <GetAvatar
-            value={"Subir foto de autora"}
-            className={"form__btn"}
-            updateAvatar={updateAvatar}
-          />
-
-          <button className="form__btn--card" onClick={handleClickCreateCard}>
-            Crear Tarjeta
-          </button>
-        </section>
+        <p className="form__message"> {message.slogan}</p>
       </fieldset>
 
-      <section className="form__create-card">
-        <p className>
-          {isError}
-        </p>
-        <a href={url} className="" target="_blank" rel="noreferrer">
-          {url}
-        </a>
-        <button className="form__btn--reset" onClick={handleResetEvent}> <i class="fa-regular fa-trash-can"></i> Reset</button>
+      <section className="form__btn">
+        <GetAvatar
+          value={"Imagen del proyecto"}
+          className={"form__btn"}
+          updateAvatar={updateProjectImg}
+        />
+        <GetAvatar
+          value={"Subir foto de autora"}
+          className={"form__btn"}
+          updateAvatar={updateAvatar}
+        />
+        <button className="form__btn--card" onClick={handleClickCreateCard}>
+          <i class="form__btn--icon fa-solid fa-plus"></i>
+          Crear Proyecto
+        </button>
+        <button className="form__btn--reset" onClick={handleResetEvent}>
+          {" "}
+          <i class="form__btn--icon fa-solid fa-rotate-right"></i> Empezar de
+          nuevo
+        </button>
       </section>
+
+      <p className>{isError}</p>
+      <a href={url} className="" target="_blank" rel="noreferrer">
+        {url}
+      </a>
     </section>
   );
 };

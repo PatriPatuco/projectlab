@@ -1,20 +1,11 @@
 @import "./core/reset";
 @import './core/_variables.module.scss';
-@import "./layout/form";
+@import "./layout/_form.scss";
 @import "./layout/header";
 @import "./layout/landing";
 @import "./layout/main";
 @import "./layout/preview";
 @import "./layout/details";
-
-/* .body {
-    height: 100vh;
-    padding: 20px;
-
-    @media (min-width: 1024px) {
-    padding: 40px;
-}
-} */
 
 .hidden {
     display: none;

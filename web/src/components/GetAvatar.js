@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../styles/layout/_form.scss';
+import "../styles/app.scss";
 
 function GetAvatar(props) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
@@ -60,6 +60,7 @@ function GetAvatar(props) {
   return (
     <div className="get-avatar">
       <label className="form__btn--get">
+        <i class="form__btn--icon fa-solid fa-file-image"></i>
         {props.value}
         <input
           type="file"
@@ -68,10 +69,6 @@ function GetAvatar(props) {
           onChange={uploadImage}
         />
       </label>
-      {/* <div
-        className="get-avatar__preview"
-        style={{ backgroundImage: `url(${avatar})` }}
-      ></div> */}
     </div>
   );
 }

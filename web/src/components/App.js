@@ -1,4 +1,4 @@
-import "../styles/app.scss";
+import "../styles/app.scss"
 import { Route, Routes } from "react-router-dom";
 import CreateCard from "./CreateCard";
 import Landing from "./Landing";
