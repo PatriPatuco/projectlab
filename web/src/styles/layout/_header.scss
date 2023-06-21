@@ -1,41 +1,64 @@
 .header {
+  width: 100%;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  padding: 0 6rem;
 
   @media (min-width: 768px) {
     display: flex;
   }
 
   &__logo {
-    padding: 1rem;
-    width: 20%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+
 
     @media (min-width: 768px) {
-      width: 15%;
-      padding: 2rem;
+      
     }
 
     @media (min-width: 1024px) {
-      width: 6%;
+    
     }
   }
 
-  &__team {
-    font-family: 'DM Serif Display', serif;
+  &__link {
+    text-decoration: none;
+  }
+
+  &__name {
+    font-family: $titles;
     font-size: 2rem;
     text-decoration: none;
     padding: 1rem;
-    color: #033631;
+    color: white;
+    font-weight: 600;
 
     @media (min-width: 768px) {
       font-size: 3rem;
-      padding: 2rem;
     }
 
     @media (min-width: 1024px) {
-      font-size: 3.2rem;
+      font-size: 2.5rem;
     }
   }
   
+
+&__menu {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  font-style: none;
+
+  &--item{
+    font-size: 1.5rem;
+    font-family: $regular;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+  }
+}
 }

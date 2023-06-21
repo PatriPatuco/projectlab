@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import logo from "../images/Equipo_palique.svg"

@@ -1,11 +1,7 @@
 .preview {
   @media (min-width: 768px) {
     height: 70vh;
-    width: 60%;
-  }
-
-  @media (min-width: 1024px) {
-    width: 60%;
+    width: 40%;
   }
 
   &__cover-img {
@@ -13,7 +9,7 @@
     width: 100%;
     height: 80%;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    border-radius: 2rem;
+
 
     @media (min-width: 768px) {
       object-fit: cover;
@@ -28,27 +24,26 @@
 
   &__card {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     color: #3e3e3e;
-    width: 85%;
-    border-radius: 2rem;
-    margin: auto;
-    gap: 2rem;
+
     padding: 3rem 1.7rem;
 
+    
     @media (min-width: 768px) {
-      width: 90%;
+
     }
 
     @media (min-width: 1024px) {
-      width: 70%;
-      align-items: center;
-      justify-content: center;
     }
 
     &--info {
-      width: 60%;
+      background-color: $black1;
+      width: 80%;
+      padding: 3rem;
 
       &--intro {
         display: flex;
@@ -61,7 +56,7 @@
         background-color: white;
         font-size: 0.8rem;
         text-align: center;
-         font-family: 'Inter', sans-serif;
+         font-family: $regular;
         position: relative;
         z-index: 1;
         width: 65%;
@@ -78,32 +73,11 @@
         }
       }
 
-      &--line {
-        width: 100%;
-        border: 0;
-        height: 0.1rem;
-        transform: translateY(-10px);
-        background-image: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0),
-          rgba(1, 1, 1, 0.75),
-          rgba(255, 255, 255, 0)
-        );
-
-        @media (min-width: 768px) {
-          transform: translateY(-10px);
-        }
-
-        @media (min-width: 1024px) {
-          transform: translateY(-11px);
-        }
-      }
-
       &--title {
-         font-family: 'Inter', sans-serif;
-        font-size: 1.4rem;
+         font-family: $regular;
+        font-size: 1.2rem;
         font-weight: bold;
-        color: black;
+        color: $lime;
         text-align: left;
 
         @media (min-width: 768px) {
@@ -117,10 +91,10 @@
       }
 
       &--slogan {
-         font-family: 'Inter', sans-serif;
+         font-family: $regular;
         font-size: 1.2rem;
         margin-bottom: 1rem;
-        color: #575757;
+        color: white;
         font-weight: bold;
 
         @media (min-width: 768px) {
@@ -132,10 +106,11 @@
       }
 
       &--desc {
-         font-family: 'Inter', sans-serif;
+         font-family: $regular;
         font-size: 0.8rem;
         margin-bottom: 1rem;
         line-height: 1.5;
+        color: white;
 
         @media (min-width: 768px) {
           font-size: 1.2rem;
@@ -148,30 +123,23 @@
       }
 
       &--technologies {
-         font-family: 'Inter', sans-serif;
+         font-family: $regular;
         display: flex;
-        flex-direction: row;
         align-items: center;
-        background-color: lightgray;
-        border-radius: 2rem;
+        background-color: $lime;
         font-size: 1rem;
         padding: 1rem;
 
         @media (min-width: 768px) {
           font-size: 1.4rem;
         }
-
-        @media (min-width: 1024px) {
-          font-size: 1.8rem;
-        }
       }
 
       &--icons {
         &--i {
-         font-size: 1.5rem;
+         font-size: 1.7rem;
          color: black;
-         padding-right: 0.7rem;
-         padding-top: 0.6rem;
+         padding-right: 1rem;
         }
       }
     }
@@ -195,23 +163,24 @@
       }
 
       &--job {
-         font-family: 'Inter', sans-serif;
-        color: #909090;
-        font-size: 1rem;
+         font-family: $regular;
+        color: $black1;
+        font-size: 0.8rem;
 
         @media (min-width: 768px) {
           font-size: 1.4rem;
         }
 
         @media (min-width: 1024px) {
-          font-size: 1.8rem;
+          font-size: 1.6rem;
         }
       }
 
       &--name {
-         font-family: 'Inter', sans-serif;
+         font-family: $regular;
         font-size: 1.4rem;
         font-weight: bold;
+        color: $purple;
 
         @media (min-width: 768px) {
           font-size: 1.6rem;

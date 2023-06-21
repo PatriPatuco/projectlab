@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 const render = "https://proyecto-canelo.onrender.com"
 /* const render = "//localhost:4000"  */
 

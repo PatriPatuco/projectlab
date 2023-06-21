@@ -1,6 +1,7 @@
 import ImgCard from "./Preview/ImgCard";
 import Card from "./Preview/Card";
 import Form from "./Form";
+import Header from "./Header";
 import cover from "../images/cover.jpeg";
 import user from "../images/user.jpeg";
 import { useState } from "react";
@@ -189,6 +190,7 @@ const CreateCard = () => {
 
   return (
     <main className="main">
+      <Header />
       <section className="preview">
         <ImgCard
           className={"preview__cover-img"}
