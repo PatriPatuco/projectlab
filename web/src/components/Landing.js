@@ -17,12 +17,12 @@ const Landing = () => {
       })
   }, []);
 
-  const render = "https://proyecto-canelo.onrender.com"
-/*   const render = "//localhost:4000"  */
+  /* const render = "https://proyecto-canelo.onrender.com" */
+  const render = "//localhost:4000" 
   const renderCards = () => {
     return allCards.map((data) => {
       return (
-        <a href={`${render}/projects/${data.idProjects}`} className="card-links"> <Card
+        <a href={`${render}/projects/${data.idprojects}`} className="card-links"> <Card
           className={"preview__card--autor--img"}
           data={data}
           defaultAvatar={user}
@@ -32,11 +32,13 @@ const Landing = () => {
   }
   return (
     <main className="landingPage">
+      <section className="landingPage__hero">
       <i class="landingPage__logo fa-solid fa-virus"></i>
       <h1 className="landingPage__title">ProjectLab</h1>
       <h2 className="landingPage__subtitle">
         Encuentra la idea perfecta entre miles de proyectos
       </h2>
+      </section>
 
       <section className="landingPage__btns">
         <Link to="/CreateCard">

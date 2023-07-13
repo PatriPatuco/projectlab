@@ -31,7 +31,7 @@ function Card({data, defaultAvatar, className}) {
         </p>
         <p className="preview__card--info--desc">
           {" "}
-          {data.descripcion ||
+          {data.desc ||
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis."}
         </p>
 

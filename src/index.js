@@ -16,9 +16,9 @@ let connection;  // Aquí almacenaremos la conexión a la base de datos
 mysql
     .createConnection({
         host: 'sql.freedb.tech',
-        database: 'freedb_ProyectoCanelo',
-        user: 'freedb_EquipoPalique',
-        password: 'W98Gbzz$w65$HYW',
+        database: 'freedb_projectlab',
+        user: 'freedb_adminlab',
+        password: '&&bS92BY4#s3W6%',
     })
 
     .then(conn => {
@@ -45,7 +45,7 @@ app.listen(serverPort, () => {
 
 app.get('/projects/all', (req, res) => {
     console.log('Pidiendo a la base de datos información de los users.');
-    const sql = ("SELECT projects.idProjects,projects.name,projects.descripcion,projects.slogan,projects.repo,projects.demo,projects.technologies,autors.autor,autors.job,autors.photo FROM projects JOIN autors ON autors.idAutor = projects.fkAutors")
+    const sql = ("SELECT projects.idprojects,projects.name,projects.desc,projects.slogan,projects.repo,projects.demo,projects.technologies,autors.autor,autors.job,autors.photo FROM projects JOIN autors ON autors.idautors = projects.fkAutor")
     connection
         .query(sql)
         .then(([results, fields]) => {
