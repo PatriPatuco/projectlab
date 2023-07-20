@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import user from '../images/user.jpeg';
+import user from '../images/user-image.png';
 import Card from './Preview/Card';
 import '../styles/app.scss';
 import { useEffect, useState } from "react";

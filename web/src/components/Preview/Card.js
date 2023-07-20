@@ -30,9 +30,8 @@ function Card({data, defaultAvatar, className}) {
           {data.slogan || "Diseños Exclusivos"}
         </p>
         <p className="preview__card--info--desc">
-          {" "}
           {data.desc ||
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet faucibus commodo tellus lectus lobortis."}
+            "Consigue tus propios diseños exclusivos con tan sólo un par de clicks."}
         </p>
 
         <section className="preview__card--info--technologies">

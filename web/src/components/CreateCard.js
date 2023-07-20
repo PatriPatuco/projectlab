@@ -3,7 +3,7 @@ import Card from "./Preview/Card";
 import Form from "./Form";
 import Header from "./Header";
 import cover from "../images/cover.jpeg";
-import user from "../images/user.jpeg";
+import user from "../images/user-image.png";
 import { useState } from "react";
 import api from "../services/Api.js";
 import "../styles/app.scss";
@@ -61,7 +61,7 @@ const CreateCard = () => {
       if (inputValue === '') {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo`,
+          [inputName]: `Este campo es obligatorio`,
         });
       } else {
         setMessage({
@@ -74,7 +74,7 @@ const CreateCard = () => {
       if (inputValue === '') {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo`,
+          [inputName]: `Este campo es obligatorio`,
         });
       } else {
         setMessage({
@@ -87,7 +87,7 @@ const CreateCard = () => {
       if (!linkValidation.test(inputValue)) {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo con un enlace HTTP: o HTTPS:`,
+          [inputName]: `Este enlace no es válido. No olvides añadir HTTP: o HTTPS:`,
         });
       } else {
         setMessage({
@@ -100,7 +100,7 @@ const CreateCard = () => {
       if (!linkValidation.test(inputValue)) {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo con un enlace HTTP: o HTTPS:`,
+          [inputName]: `Este campo es obligatorio con un enlace HTTP: o HTTPS:`,
         });
       } else {
         setMessage({
@@ -113,7 +113,7 @@ const CreateCard = () => {
       if (inputValue === '') {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo`,
+          [inputName]: `Este campo es obligatorio`,
         });
       } else {
         setMessage({
@@ -126,7 +126,7 @@ const CreateCard = () => {
       if (inputValue === '') {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo`,
+          [inputName]: `Este campo es obligatorio`,
         });
       } else {
         setMessage({
@@ -139,7 +139,7 @@ const CreateCard = () => {
       if (inputValue === '') {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo`,
+          [inputName]: `Este campo es obligatorio`,
         });
       } else {
         setMessage({
@@ -152,7 +152,7 @@ const CreateCard = () => {
       if (inputValue === '') {
         setMessage({
           ...message,
-          [inputName]: `Rellena este campo`,
+          [inputName]: `Este campo es obligatorio`,
         });
       } else {
         setMessage({

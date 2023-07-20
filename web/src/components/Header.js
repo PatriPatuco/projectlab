@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import equipo from "../images/Equipo_palique.svg";
 const Header = () => {
   return (
     <header className="header">

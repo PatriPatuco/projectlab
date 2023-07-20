@@ -57,7 +57,7 @@ const Form = ({
             type="text"
             name="repo"
             id="repo"
-            placeholder="Ej: https://github.com/Adalab/project-promo-s-module-3-team-1"
+            placeholder="Ej: https://github.com/User/projectlab"
             value={data.repo}
             onInput={handleInput}
             required
@@ -69,7 +69,7 @@ const Form = ({
           <input
             className="form__inputLinks"
             type="text"
-            placeholder="http://beta.adalab.es/project-promo-s-module-3-team-1/"
+            placeholder="http://myweb.com"
             name="demo"
             id="demo"
             value={data.demo}
@@ -85,26 +85,25 @@ const Form = ({
         <input
           className="form__input"
           type="text"
-          placeholder="Ej: Reackt - JS - MongoDB"
+          placeholder="Ej: React - SCSS - MongoDB"
           name="technologies"
           id="technologies"
           value={data.technologies}
           onChange={handleInput}
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message"> {message.slogan}</p>
+        <p className="form__message"> {message.technologies}</p>
         <textarea
           className="form__textarea"
           type="text"
-          placeholder="Ej: Consigue tus propios diseños exclusivos con tan
-sólo un par de clicks."
+          placeholder="Ej: Consigue tus propios diseños exclusivos con tan sólo un par de clicks."
           name="desc"
           id="desc"
           value={data.desc}
           onChange={handleInput}
           required
         ></textarea>
-        <p className="form__message"> {message.slogan}</p>
+        <p className="form__message"> {message.desc}</p>
       </fieldset>
 
       <fieldset className="form__autor">
@@ -122,7 +121,7 @@ sólo un par de clicks."
           required
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message"> {message.slogan}</p>
+        <p className="form__message"> {message.autor}</p>
         <input
           className="form__input"
           type="text"
@@ -134,7 +133,7 @@ sólo un par de clicks."
           required
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
-        <p className="form__message"> {message.slogan}</p>
+        <p className="form__message"> {message.job}</p>
       </fieldset>
 
       <section className="form__btn">
