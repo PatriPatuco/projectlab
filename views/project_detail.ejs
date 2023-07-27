@@ -5,30 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/main.css" />
-    <title>Proyectos Canelo</title>
+    <link rel="icon" href="/favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Prompt:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>ProjectLab detail card</title>
   </head>
 
- <!--  <header class="header_detail">
-    <section class="header__logo"> 
-    <a class="header_detail_logo" href="#/"
-      > <i class="header__logo fa-solid fa-virus"></i>
-      </a
-    ><a class="header__link" href="#/"><p class="header__name">ProjectLab</p></a>
-  </section>
-  <nav>
-    <ul class="header__menu">
-      <a to="/" class="header__menu--item">
-        <li>Home</li>
-      </a>
-      <a to="/" class="header__menu--item">
-        <li>Projects</li>
-      </a>
-    </ul>
-  </nav>    
-  </header> -->
-
-
   <body>
+    <header class="header_detail">
+      <a class="header_detail__link" href="#">
+        <i class="header_detail__logo fa-solid fa-virus"></i>
+        <p class="header_detail__name">ProjectLab</p>
+      </a>
+    <nav>
+      <ul class="header__menu">
+        <a to="/" class="header__menu--item">
+          <li>Home</li>
+        </a>
+        <a to="/" class="header__menu--item">
+          <li>Projects</li>
+        </a>
+      </ul>
+    </nav>
+  </header>
+
     <section class="detailsPage">
       <img class="detailsPage__cover" src="<%=image%>" alt="" />
       <section class="detailsPage__card">
