@@ -142,6 +142,12 @@ html {
   background-color: #a5a9bc;
 }
 
+@media (min-width: 768px) {
+  .body-details {
+    padding: 0 4rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .body-details {
     padding: 0 10rem;
@@ -206,7 +212,7 @@ html {
 
 @media (min-width: 768px) {
   .header_detail__name {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 }
 
@@ -266,14 +272,9 @@ html {
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .detailsPage__card {
-    flex-direction: row;
-  }
-}
-
 @media (min-width: 1024px) {
   .detailsPage__card {
+    flex-direction: row;
     align-items: center;
     justify-content: center;
   }
@@ -340,7 +341,7 @@ html {
 
 @media (min-width: 768px) {
   .detailsPage__card--info--desc {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
   }
 }
@@ -380,6 +381,12 @@ html {
   padding-top: 0.6rem;
 }
 
+@media (min-width: 768px) {
+  .detailsPage__card--info--icons--i {
+    font-size: 1.6rem;
+  }
+}
+
 .detailsPage__card--autor {
   background-color: #0D0D0D;
   text-align: center;
@@ -395,8 +402,8 @@ html {
 
 @media (min-width: 768px) {
   .detailsPage__card--autor--img {
-    border-radius: 50%;
-    width: 90%;
+     height: 10rem;
+      width: 10rem;
   }
 }
 
