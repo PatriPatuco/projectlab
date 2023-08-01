@@ -1,16 +1,165 @@
+/*-------- reset --------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-family: "Catamaran", sans-serif;
+  font-size: 62.5%;
+}
+
+/*------ styles -------*/
+
+.body-details {
+  padding: 0 2rem;
+  background-color: #a5a9bc;
+}
+
+@media (min-width: 1024px) {
+  .body-details {
+    padding: 0 10rem;
+  }
+}
+
 .header_detail {
-  font-family: 'Prompt', sans-serif;
-  width: 100%;
+  font-family: "Prompt", sans-serif;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 6rem;
+  padding: 3rem 0;
 }
 
 @media (min-width: 768px) {
   .header_detail {
-  display: flex;
-}
+    display: flex;
+  }
 }
 
 .header_detail {
@@ -31,97 +180,95 @@
 }
 
 .header_detail__link {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: #ECEDF1;
 }
 
 .header_detail__logo {
-  padding: 1rem;
-  width: 20%;
-}
-
-@media (min-width: 768px) {
-  .header_detail__logo {
-    padding: 2rem;
-    width: 15%;
-  }
+  font-size: 1.5rem;
 }
 
 @media (min-width: 1024px) {
   .header_detail__logo {
-    width: 6%;
+    font-size: 2rem;
   }
 }
 
 .header_detail__name {
-  font-size: 2rem;
-    padding: 1rem;
-    color: white;
-    font-weight: 600;
-}
-
-.main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding: 30px 0;
+  font-size: 1.5rem;
+  padding: 1rem;
+  color: #ECEDF1;
+  font-weight: 600;
 }
 
 @media (min-width: 768px) {
-  .main {
-    align-items: start;
-    display: flex;
-    flex-direction: row;
-    padding: 30px 0 50px;
+  .header_detail__name {
+    font-size: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
-  .main {
-    padding: 30px 0 80px;
+  .header_detail__name {
+    font-size: 2.5rem;
   }
 }
 
-.detailsPage {
-  align-items: center;
+.header_detail__menu {
   display: flex;
+  gap: 1rem;
+  text-decoration: none;
+  font-style: none;
+}
+
+.header_detail__menu--item {
+  font-size: 1.5rem;
+  font-family: "Prompt", sans-serif;
+  font-weight: bold;
+  color: #ECEDF1;
+  text-decoration: none;
+}
+
+.detailsPage {
+  display: flex;
+  align-items: center;
   flex-direction: column;
-  margin-bottom: 5rem;
-  margin-top: 5rem;
 }
 
 .detailsPage__cover {
-  border-radius: 2rem;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background-color: #0D0D0D;
   object-fit: cover;
   width: 100%;
+  height: 30rem;
 }
 
 @media (min-width: 1024px) {
   .detailsPage__cover {
-    width: 70%;
+    height: 65rem;
   }
+}
+
+.detailsPage__line {
+  background-color: #dafe93;
+  width: 100%;
+  height: 1.5rem;
 }
 
 .detailsPage__card {
   background-color: #fff;
-  border-radius: 2rem;
-  color: #3e3e3e;
+  color: #0D0D0D;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   gap: 2rem;
   margin: auto;
-  padding: 3rem 1.7rem;
-  width: 85%;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .detailsPage__card {
-    width: 90%;
+    flex-direction: row;
   }
 }
 
@@ -129,85 +276,31 @@
   .detailsPage__card {
     align-items: center;
     justify-content: center;
-    width: 70%;
   }
 }
 
 .detailsPage__card--info {
-  width: 60%;
-}
-
-.detailsPage__card--info--intro {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  margin-bottom: 0.5rem;
-}
-
-.detailsPage__card--info--subtitle {
-  background-color: #fff;
-  font-family: Inter, sans-serif;
-  font-size: 0.8rem;
-  position: relative;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  width: 65%;
-  z-index: 1;
-}
-
-@media (min-width: 768px) {
-  .detailsPage__card--info--subtitle {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-}
-
-@media (min-width: 1024px) {
-  .detailsPage__card--info--subtitle {
-    font-size: 1.5rem;
-    width: 35%;
-  }
-}
-
-.detailsPage__card--info--line {
-  background-image: linear-gradient(
-    90deg,
-    hsla(0, 0%, 100%, 0),
-    rgba(1, 1, 1, 0.75),
-    hsla(0, 0%, 100%, 0)
-  );
-  border: 0;
-  height: 0.1rem;
-  -webkit-transform: translateY(-10px);
-  transform: translateY(-10px);
   width: 100%;
-}
-
-@media (min-width: 768px) {
-  .detailsPage__card--info--line {
-    -webkit-transform: translateY(-10px);
-    transform: translateY(-10px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .detailsPage__card--info--line {
-    -webkit-transform: translateY(-11px);
-    transform: translateY(-11px);
-  }
+  margin: auto;
+  padding-top: 1rem;
 }
 
 .detailsPage__card--info--title {
-  color: #000;
+  color: #29B583;
   font-family: Inter, sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  text-align: left;
+      margin-bottom: 0.4rem;
 }
 
 @media (min-width: 768px) {
   .detailsPage__card--info--title {
     font-size: 2rem;
-    margin-bottom: 1rem;
   }
 }
 
@@ -218,7 +311,7 @@
 }
 
 .detailsPage__card--info--slogan {
-  color: #575757;
+  color: #353E40;
   font-family: Inter, sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
@@ -239,9 +332,10 @@
 
 .detailsPage__card--info--desc {
   font-family: Inter, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1rem;
+  padding: 0 1rem;
 }
 
 @media (min-width: 768px) {
@@ -258,14 +352,13 @@
 }
 
 .detailsPage__card--info--technologies {
+  color: #353E40;
   align-items: center;
-  background-color: #d3d3d3;
-  border-radius: 2rem;
   display: flex;
   flex-direction: row;
   font-family: Inter, sans-serif;
   font-size: 1rem;
-  padding: 1rem;
+  font-weight: bolder;
 }
 
 @media (min-width: 768px) {
@@ -281,20 +374,23 @@
 }
 
 .detailsPage__card--info--icons--i {
-  color: #000;
-  font-size: 1.5rem;
+  color: #033631;
+  font-size: 1.4rem;
   padding-right: 0.7rem;
   padding-top: 0.6rem;
 }
 
 .detailsPage__card--autor {
+  background-color: #0D0D0D;
   text-align: center;
-  width: 40%;
+  width: 100%;
+  padding: 2rem 0;
 }
 
 .detailsPage__card--autor--img {
-  border-radius: 50%;
-  width: 90%;
+  object-fit: cover;
+  height: 6rem;
+  width: 6rem;
 }
 
 @media (min-width: 768px) {
@@ -311,7 +407,7 @@
 }
 
 .detailsPage__card--autor--job {
-  color: #909090;
+  color: #ECEDF1;
   font-family: Inter, sans-serif;
   font-size: 1rem;
 }
@@ -332,6 +428,8 @@
   font-family: Inter, sans-serif;
   font-size: 1.4rem;
   font-weight: 700;
+  color: #AE95F5;
+  padding-top: 1rem;
 }
 
 @media (min-width: 768px) {
