@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.983ce600.css",
-    "main.js": "./static/js/main.8f57e567.js",
+    "main.css": "./static/css/main.1edeaef5.css",
+    "main.js": "./static/js/main.623b7e3a.js",
     "static/media/cover.jpeg": "./static/media/cover.e291a311e8829543f486.jpeg",
     "static/media/projectlab-logo.svg": "./static/media/projectlab-logo.665c49a83e77777a665b09dce5dbff5f.svg",
     "index.html": "./index.html",
-    "main.983ce600.css.map": "./static/css/main.983ce600.css.map",
-    "main.8f57e567.js.map": "./static/js/main.8f57e567.js.map"
+    "main.1edeaef5.css.map": "./static/css/main.1edeaef5.css.map",
+    "main.623b7e3a.js.map": "./static/js/main.623b7e3a.js.map"
   },
   "entrypoints": [
-    "static/css/main.983ce600.css",
-    "static/js/main.8f57e567.js"
+    "static/css/main.1edeaef5.css",
+    "static/js/main.623b7e3a.js"
   ]
 }

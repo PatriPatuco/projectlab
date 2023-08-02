@@ -1,6 +1,6 @@
 /* eslint-disable import/no-anonymous-default-export */
-/* const render = "https://proyecto-canelo.onrender.com" */
-const render = "//localhost:4000" 
+const render = "https://projectlab.onrender.com/"
+/* const render = "//localhost:4000"  */
 
 const dataApiBD = (data) => {
     return (fetch(`${render}/projects/all`)
