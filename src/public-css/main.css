@@ -150,7 +150,7 @@ html {
 
 @media (min-width: 1024px) {
   .body-details {
-    padding: 0 10rem;
+    padding: 0 10rem 8rem 10rem;
   }
 }
 
@@ -265,7 +265,7 @@ html {
 .detailsPage__card {
   background-color: #fff;
   color: #0D0D0D;
-  display: flex;
+  display: grid;
   flex-direction: column;
   gap: 2rem;
   margin: auto;
@@ -274,9 +274,8 @@ html {
 
 @media (min-width: 1024px) {
   .detailsPage__card {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    grid-template-columns: 70% 30%;
+    gap: inherit;
   }
 }
 
@@ -407,11 +406,6 @@ html {
   }
 }
 
-@media (min-width: 1024px) {
-  .detailsPage__card--autor--img {
-    width: 50%;
-  }
-}
 
 .detailsPage__card--autor--job {
   color: #ECEDF1;
