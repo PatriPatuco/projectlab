@@ -17,7 +17,7 @@ const Landing = () => {
       })
   }, []);
 
-  const render = "https://projectlab.onrender.com/";
+  const render = "https://projectlab.onrender.com";
 /*   const render = "//localhost:4000"  */
   const renderCards = () => {
     return allCards.map((data) => {

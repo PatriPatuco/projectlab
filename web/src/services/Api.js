@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-const render = "https://projectlab.onrender.com/"
+const render = "https://projectlab.onrender.com"
 /* const render = "//localhost:4000"  */
 
 const dataApiBD = (data) => {
