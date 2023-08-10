@@ -73,10 +73,10 @@ function GetAvatar(props) {
   );
 }
 
-GetAvatar.propTypes = {
+/* GetAvatar.propTypes = {
   avatar: PropTypes.string.isRequired,
   updateAvatar: PropTypes.func.isRequired,
   updateProjectImg: PropTypes.func.isRequired,
-};
+}; */
 
 export default GetAvatar;

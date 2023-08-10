@@ -11,9 +11,8 @@ const Form = ({
   updateAvatar,
   updateProjectImg,
   handleResetEvent,
-  message
+  message,
 }) => {
-
   return (
     <section className="form">
       <Link to="/" className="form__back-btn">
@@ -34,7 +33,6 @@ const Form = ({
           id="name"
           value={data.name}
           onInput={handleInput}
-          required
         />
         <p className="form__message"> {message.name}</p>
         <input
@@ -60,7 +58,6 @@ const Form = ({
             placeholder="Ej: https://github.com/User/projectlab"
             value={data.repo}
             onInput={handleInput}
-            required
           />
           <p className="form__message"> {message.repo}</p>
           <label className="form__label" htmlFor="demo">
@@ -74,7 +71,6 @@ const Form = ({
             id="demo"
             value={data.demo}
             onChange={handleInput}
-            required
             pattern="/^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
           />
           <p className="form__message"> {message.demo}</p>
@@ -101,7 +97,6 @@ const Form = ({
           id="desc"
           value={data.desc}
           onChange={handleInput}
-          required
         ></textarea>
         <p className="form__message"> {message.desc}</p>
       </fieldset>
@@ -118,7 +113,6 @@ const Form = ({
           id="autor"
           value={data.autor}
           onChange={handleInput}
-          required
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
         <p className="form__message"> {message.autor}</p>
@@ -130,7 +124,6 @@ const Form = ({
           id="job"
           value={data.job}
           onChange={handleInput}
-          required
           pattern="/^[A - ZÁ - üñÑ]+$/i"
         />
         <p className="form__message"> {message.job}</p>
@@ -153,15 +146,24 @@ const Form = ({
         </button>
         <button className="form__btn--reset" onClick={handleResetEvent}>
           {" "}
-          <i class="form__btn--icon fa-solid fa-rotate-right"></i> Empezar de
-          nuevo
+          <i class="form__btn--icon fa-solid fa-rotate-right"></i>
+          <p>Empezar de nuevo</p>
         </button>
       </section>
-
-      <p className>{isError}</p>
-      <a href={url} className="" target="_blank" rel="noreferrer">
-        {url}
-      </a>
+      <section className="form__create-message">
+        <div className={message.type}>
+          <p>{message.text}</p>
+          <p>{isError}</p>
+        </div>
+        <div className="prueba">
+          <h3>La tarjeta ha sido creada:</h3>
+          <div className="message">
+            <a className="icon" href="#">
+              <i class="fa-solid fa-copy"></i>
+            </a>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };
