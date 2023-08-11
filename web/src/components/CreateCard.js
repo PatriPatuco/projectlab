@@ -187,7 +187,6 @@ const handleClickCreateCard = (ev) => {
   api.dataApi(data).then((responseData) => {
     if (responseData && responseData.cardURL) {
       setUrl(responseData.cardURL);
-      setIsError(""); // Limpia el mensaje de error
       setMessage({
         type: "success",
         text: "La tarjeta ha sido creada.",

@@ -152,7 +152,11 @@ const Form = ({
       </section>
 
       <section className="form__create-message">
-        <div className={`form__success-message ${message.type === "success" ? "show" : "hide"}`}>
+        <div
+          className={`form__success-message ${
+            message.type === "success" ? "show" : "hide"
+          }`}
+        >
           <h3 className="form__success-message--title">
             La tarjeta ha sido creada:
           </h3>
@@ -164,7 +168,11 @@ const Form = ({
           </div>
         </div>
 
-        <div className={`form__error-message ${isError ? "show" : "hide"}`}>
+        <div
+          className={`form__error-message ${
+            message.type === "error" ? "show" : "hide"
+          }`}
+        >
           <h3 className="form__error-message--title">Error:</h3>
           <div className="form__error-message--box">
             <i class="fa-solid fa-circle-exclamation"></i>
