@@ -145,7 +145,7 @@ app.post("/projects/add", async (req, res) => {
     const addResults = await connection.query(sqlProject, valuesProject);
     let response = {
       success: true,
-      cardURL: `http://localhost:4000/projects/${results.insertId}`,
+      cardURL: `https://projectlab.onrender.com/projects/${results.insertId}`,
     };
     res.json(response);
   }

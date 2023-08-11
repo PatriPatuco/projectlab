@@ -163,53 +163,6 @@ const CreateCard = () => {
     }
   };
 
-
-  /* const handleClickCreateCard = (ev) => {
-    ev.preventDefault();
-    console.log(data);
-    api.dataApi(data).then((info) => {
-      console.log(info);// info es igual a data.cardURL
-      if (info === undefined) {
-        console.log(info.error)
-        setIsError(`Ocurrió un error inesperado ${info.error}`);
-      }
-      else {
-        setUrl(info);
-        setIsError('La tarjeta ha sido creada');
-      }
-    });
-  }; */
-
-/* const handleClickCreateCard = (ev) => {
-  ev.preventDefault();
-  console.log(data);
-  api.dataApi(data)
-  .then((responseData) => {
-   if (responseData && responseData.cardURL) {
-     setUrl(responseData.cardURL);
-     setIsError(""); // Limpia el mensaje de error
-     setMessage({
-       type: "success",
-       text: "La tarjeta ha sido creada.",
-     });
-   } else if (responseData && responseData.error) {
-     // Verifica si responseData tiene la propiedad error
-     setIsError(`Ocurrió un error inesperado ${responseData.error}`);
-     setMessage({
-       type: "error",
-       text: `Ocurrió un error inesperado ${responseData.error}`,
-     });
-   } else {
-     setIsError(`Ocurrió un error inesperado`);
-     setMessage({
-       type: "error",
-       text: `Ocurrió un error inesperado`,
-     });
-   }
-
-  });
-}; */
-
 const handleClickCreateCard = (ev) => {
   ev.preventDefault();
   console.log(data);
@@ -248,8 +201,6 @@ const handleClickCreateCard = (ev) => {
     }
   });
 };
-
-
 
   const handleResetEvent = (ev) => {
     ev.preventDefault();
