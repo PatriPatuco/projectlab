@@ -217,7 +217,6 @@
       border-radius: 1rem;
       border: none;
       cursor: pointer;
-      
 
       @media (min-width: 768px) {
         font-size: 1.8rem;
@@ -274,11 +273,60 @@
     padding: 0.3rem 0 1.2rem 1rem;
   }
 
-  &__create-message{
-    color:$black1;
-    font-size: 1.5rem;
-    /* border: 1px solid $black1; */
-    padding: 1rem;
+  &__success-message {
+    &--title {
+      font-family: $titles;
+      font-size: 2.5rem;
+      font-weight: 600;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    &--box {
+      border: 2px solid $black1;
+    }
+    &--link {
+      display: flex;
+      align-items: center;
+      font-family: $regular;
+      font-size: 1.4rem;
+      color: $green;
+    }
+  }
+  .fa-copy {
+    background-color: $black1;
+    padding: 1.5rem;
+    color: $lime;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+
+  &__error-message {
+    &--title {
+      font-family: $titles;
+      color: $orange-color;
+      font-size: 2.5rem;
+      font-weight: 600;
+      padding-top: 2rem;
+      padding-bottom: 1rem;
+    }
+
+    &--box {
+      border: 2px solid $orange-color;
+      display: flex;
+      align-items: center;
+      font-family: $regular;
+      color: $orange-color;
+      font-size: 1.4rem;
+    }
+  }
+  .fa-circle-exclamation {
+    background-color: $orange-color;
+    padding: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    margin-right: 1rem;
   }
 }
 
@@ -303,8 +351,6 @@
   color: $green;
 }
 
-
-
 .success {
   background-color: #c6f6d5;
   color: #2d924d;
@@ -313,18 +359,4 @@
 .error {
   background-color: #fde2e2;
   color: #b91c1c;
-}
-
-.prueba {
-  .message{
-    display:flex;
-  }
-.icon {
-  background-color: $black1;
-  padding: 1.5rem;
-}
-}
-.fa-copy{
-  color: $lime;
-  font-size: 2rem;
 }
