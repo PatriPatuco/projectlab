@@ -267,7 +267,7 @@
   &__message {
     font-weight: bold;
     font-style: italic;
-    color: red;
+    color: $orange-color;
     grid-row: 4;
     font-size: 1.2rem;
     padding: 0.3rem 0 1.2rem 1rem;
@@ -330,33 +330,15 @@
   }
 }
 
-.linkCard {
-  padding: 2rem;
-  width: 93%;
-  margin: 2rem 4;
-  font-size: 1.3rem;
-  text-decoration: none;
-  text-align: center;
-  color: #ec5a46;
-  background-color: #e4e0db;
-  border-radius: 1rem;
-  box-shadow: inset 2px 2px 8px #ada9a48a;
-
-  @media (min-width: 768px) {
-    font-size: 1.8rem;
-  }
-}
-
 .span {
   color: $green;
 }
 
-.success {
-  background-color: #c6f6d5;
-  color: #2d924d;
+.show {
+  display: block;
 }
 
-.error {
-  background-color: #fde2e2;
-  color: #b91c1c;
+
+.hide {
+  display: none;
 }

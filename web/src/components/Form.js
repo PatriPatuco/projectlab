@@ -150,8 +150,9 @@ const Form = ({
           <p>Empezar de nuevo</p>
         </button>
       </section>
+
       <section className="form__create-message">
-        <div className="form__success-message">
+        <div className={`form__success-message ${message.type === "success" ? "show" : "hide"}`}>
           <h3 className="form__success-message--title">
             La tarjeta ha sido creada:
           </h3>
@@ -159,17 +160,16 @@ const Form = ({
             <a className="form__success-message--link" href={url}>
               <i class="fa-solid fa-copy"></i>
               {url}
-              <p>http://localhost:4000/projects/12</p>
             </a>
           </div>
         </div>
 
-        <div className="form__error-message">
+        <div className={`form__error-message ${isError ? "show" : "hide"}`}>
           <h3 className="form__error-message--title">Error:</h3>
           <div className="form__error-message--box">
             <i class="fa-solid fa-circle-exclamation"></i>
             {url}
-            <p>Todos los campos son obligatorios{isError}</p>
+            <p>{isError}</p>
           </div>
         </div>
       </section>
