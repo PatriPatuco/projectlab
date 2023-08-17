@@ -7,11 +7,11 @@ const Form = ({
   handleInput,
   url,
   handleClickCreateCard,
-  isError,
   updateAvatar,
   updateProjectImg,
   handleResetEvent,
-  message,
+  inputMessage,
+  isError,
 }) => {
   return (
     <section className="form">
@@ -34,7 +34,14 @@ const Form = ({
           value={data.name}
           onInput={handleInput}
         />
-        <p className="form__message"> {message.name}</p>
+        {((isError === "Faltan datos por rellenar" && data.desc === "") ||
+          inputMessage.desc) && (
+          <p className="form__message">
+            {isError === "Faltan datos por rellenar" && data.name === ""
+              ? "Este campo es obligatorio"
+              : inputMessage.desc}
+          </p>
+        )}
         <input
           className="form__input"
           type="text"
@@ -43,9 +50,13 @@ const Form = ({
           placeholder="Ej: Diseños Exclusivos"
           value={data.slogan}
           onChange={handleInput}
-          pattern="/^[A - ZÁ - üñÑ]+$/i"
+          pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$"
         />
-        <p className="form__message"> {message.slogan}</p>
+        <p className="form__message">
+          {isError === "Faltan datos por rellenar" && data.slogan === ""
+            ? "Este campo es obligatorio"
+            : inputMessage.slogan}
+        </p>
         <div className="form__project--links">
           <label className="form__label" htmlFor="repo">
             Repositorio<span className="span"> *</span>
@@ -59,7 +70,11 @@ const Form = ({
             value={data.repo}
             onInput={handleInput}
           />
-          <p className="form__message"> {message.repo}</p>
+          <p className="form__message">
+            {isError === "Faltan datos por rellenar" && data.repo === ""
+              ? "Este enlace no es válido. No olvides añadir HTTP: o HTTPS:"
+              : inputMessage.repo}
+          </p>
           <label className="form__label" htmlFor="demo">
             Demo<span className="span"> *</span>
           </label>
@@ -73,7 +88,11 @@ const Form = ({
             onChange={handleInput}
             pattern="/^((https?|ftp|file):\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/"
           />
-          <p className="form__message"> {message.demo}</p>
+          <p className="form__message">
+            {isError === "Faltan datos por rellenar" && data.demo === ""
+              ? "Este enlace no es válido. No olvides añadir HTTP: o HTTPS:"
+              : inputMessage.demo}
+          </p>
         </div>
         <label className="form__label" htmlFor="technologies">
           Tecnologías<span className="span"> *</span>
@@ -86,9 +105,13 @@ const Form = ({
           id="technologies"
           value={data.technologies}
           onChange={handleInput}
-          pattern="/^[A - ZÁ - üñÑ]+$/i"
+          pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$"
         />
-        <p className="form__message"> {message.technologies}</p>
+        <p className="form__message">
+          {isError === "Faltan datos por rellenar" && data.technologies === ""
+            ? "Este campo es obligatorio"
+            : inputMessage.technologies}
+        </p>
         <textarea
           className="form__textarea"
           type="text"
@@ -98,7 +121,11 @@ const Form = ({
           value={data.desc}
           onChange={handleInput}
         ></textarea>
-        <p className="form__message"> {message.desc}</p>
+        <p className="form__message">
+          {isError === "Faltan datos por rellenar" && data.desc === ""
+            ? "Este campo es obligatorio"
+            : inputMessage.desc}
+        </p>
       </fieldset>
 
       <fieldset className="form__autor">
@@ -113,9 +140,13 @@ const Form = ({
           id="autor"
           value={data.autor}
           onChange={handleInput}
-          pattern="/^[A - ZÁ - üñÑ]+$/i"
+          pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$"
         />
-        <p className="form__message"> {message.autor}</p>
+        <p className="form__message">
+          {isError === "Faltan datos por rellenar" && data.autor === ""
+            ? "Este campo es obligatorio"
+            : inputMessage.autor}
+        </p>
         <input
           className="form__input"
           type="text"
@@ -124,9 +155,13 @@ const Form = ({
           id="job"
           value={data.job}
           onChange={handleInput}
-          pattern="/^[A - ZÁ - üñÑ]+$/i"
+          pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$"
         />
-        <p className="form__message"> {message.job}</p>
+        <p className="form__message">
+          {isError === "Faltan datos por rellenar" && data.job === ""
+            ? "Este campo es obligatorio"
+            : inputMessage.job}
+        </p>
       </fieldset>
 
       <section className="form__btn">
@@ -152,34 +187,29 @@ const Form = ({
       </section>
 
       <section className="form__create-message">
-        <div
-          className={`form__success-message ${
-            message.type === "success" ? "show" : "hide"
-          }`}
-        >
-          <h3 className="form__success-message--title">
-            La tarjeta ha sido creada:
-          </h3>
-          <div className="form__success-message--box">
-            <a className="form__success-message--link" href={url}>
-              <i class="fa-solid fa-copy"></i>
-              {url}
-            </a>
+        {isError === "La tarjeta ha sido creada" && (
+          <div className="form__success-message">
+            <h3 className="form__success-message--title">
+              La tarjeta ha sido creada:
+            </h3>
+            <div className="form__success-message--box">
+              <a className="form__success-message--link" href={url}>
+                <i className="fa-solid fa-copy"></i>
+                <p>{url}</p>
+              </a>
+            </div>
           </div>
-        </div>
+        )}
 
-        <div
-          className={`form__error-message ${
-            message.type === "error" ? "show" : "hide"
-          }`}
-        >
-          <h3 className="form__error-message--title">Error:</h3>
-          <div className="form__error-message--box">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            {url}
-            <p>{isError}</p>
+        {isError === "Faltan datos por rellenar" && (
+          <div className="form__error-message">
+            <h3 className="form__error-message--title">Error:</h3>
+            <div className="form__error-message--box">
+              <i className="fa-solid fa-circle-exclamation"></i>
+              <p>{isError}</p>
+            </div>
           </div>
-        </div>
+        )}
       </section>
     </section>
   );

@@ -40,7 +40,8 @@ const CreateCard = () => {
   }
 
   const [isError, setIsError] = useState('');
-  const [message, setMessage] = useState({})
+  const [inputMessage, setInputMessage] = useState({});
+  const [cardMessage, setCardMessage] = useState({});
 
   const updateAvatar = (avatar) => {
     setData({ ...data, photo: avatar });
@@ -53,150 +54,155 @@ const CreateCard = () => {
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-    const textValidation = /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$/;
+     const textValidation = /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$/;
     const linkValidation =
       /^((https?|ftp|file):\/\/)?([\da-z.-]+).([a-z.]{2,6})([/\w .-]*)*\/?$/;
     if (inputName === "name") {
       setData({ ...data, name: inputValue });
       if (inputValue === '') {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "slogan") {
       setData({ ...data, slogan: inputValue });
       if (inputValue === '') {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "repo") {
       setData({ ...data, repo: inputValue });
       if (!linkValidation.test(inputValue)) {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este enlace no es válido. No olvides añadir HTTP: o HTTPS:`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "demo") {
       setData({ ...data, demo: inputValue });
       if (!linkValidation.test(inputValue)) {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio con un enlace HTTP: o HTTPS:`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "technologies") {
       setData({ ...data, technologies: inputValue });
       if (inputValue === '') {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "desc") {
       setData({ ...data, desc: inputValue });
       if (inputValue === '') {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "autor" && textValidation.test(inputValue)) {
       setData({ ...data, autor: inputValue });
       if (inputValue === '') {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     } else if (inputName === "job" && textValidation.test(inputValue)) {
       setData({ ...data, job: inputValue });
       if (inputValue === '') {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
         });
       } else {
-        setMessage({
-          ...message,
+        setInputMessage({
+          ...inputMessage,
           [inputName]: ``,
         });
       }
     }
   };
 
-const handleClickCreateCard = (ev) => {
+/* const handleClickCreateCard = (ev) => {
   ev.preventDefault();
   console.log(data);
 
   // Realizar verificación adicional de campos vacíos aquí
-  if (
-    data.name === "" ||
-    data.slogan === "" ||
-    data.demo === "" ||
-    data.repo === "" ||
-    data.technologies === "" ||
-    data.desc === "" ||
-    data.image === "" ||
-    data.photo === "" ||
-    data.autor === "" ||
-    data.job === ""
-  ) {
-    setIsError("Todos los campos son obligatorios");
-    return;
-  }
+  
 
   api.dataApi(data).then((responseData) => {
-    if (responseData && responseData.cardURL) {
+    console.log(responseData); // Verifica el contenido de la respuesta
+    if (responseData && responseData.success) {
+      console.log("Success response received");
       setUrl(responseData.cardURL);
-      setMessage({
+      setCardMessage({
         type: "success",
         text: "La tarjeta ha sido creada.",
       });
+      setIsError('');
+      setData(defaultCard);
     } else {
       setIsError(`Ocurrió un error inesperado ${responseData.error}`);
-      setMessage({
+      setCardMessage({
         type: "error",
         text: `Ocurrió un error inesperado ${responseData.error}`,
       });
+    }
+  });
+}; */
+
+
+const handleClickCreateCard = (ev) => {
+  ev.preventDefault();
+  console.log(data);
+  api.dataApi(data).then((info) => {
+    console.log(info); // info es igual a data.cardURL
+    if (info === undefined) {
+      setIsError("Faltan datos por rellenar");
+    } else {
+      setUrl(info);
+      setIsError("La tarjeta ha sido creada");
     }
   });
 };
@@ -208,6 +214,8 @@ const handleClickCreateCard = (ev) => {
     ls.remove('cards');
     setUrl('');
     setIsError('');
+    setInputMessage({});
+    setCardMessage({});
   }
 
   return (
@@ -232,14 +240,13 @@ const handleClickCreateCard = (ev) => {
         handleInput={handleInput}
         handleClickCreateCard={handleClickCreateCard}
         url={url}
-        isError={isError}
         updateAvatar={updateAvatar}
         updateProjectImg={updateProjectImg}
         handleResetEvent={handleResetEvent}
-        message={message}
+        inputMessage={inputMessage}
+        isError={isError}
       />
     </main>
-
   );
 };
 
