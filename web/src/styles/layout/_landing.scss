@@ -5,36 +5,34 @@
   align-items: center;
   background-color: $lime;
 
- 
+  &__hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
 
-    &__hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem;
-
-      @media (min-width: 768px){
-        padding: 5rem;
-      }
-  
-      @media (min-width: 1024px){
-        padding: 10rem 0 3rem 0;
-      } 
+    @media (min-width: 768px) {
+      padding: 5rem;
     }
+
+    @media (min-width: 1024px) {
+      padding: 10rem 0 3rem 0;
+    }
+  }
 
   &__logo {
     font-size: 5rem;
     text-align: center;
     color: $green;
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       width: 20%;
-    } 
+    }
 
-    @media (min-width: 1024px){
+    @media (min-width: 1024px) {
       width: 13%;
-    } 
+    }
   }
 
   &__title {
@@ -44,9 +42,9 @@
     color: $black1;
     text-align: center;
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       font-size: 6rem;
-    } 
+    }
   }
 
   &__subtitle {
@@ -57,50 +55,52 @@
     margin-top: 2rem;
     margin-bottom: 3rem;
 
-    @media (min-width: 768px){
+    @media (min-width: 768px) {
       font-size: 3rem;
     }
   }
 
-  &__btns{
+  &__btns {
     display: flex;
     flex-direction: column;
     margin-bottom: 5rem;
     gap: 2rem;
-    
 
-    @media (min-width: 768px){
-    flex-direction: row;
-    gap: 3rem;
-    }    
+    @media (min-width: 768px) {
+      flex-direction: row;
+      gap: 3rem;
+    }
   }
-  
+
   &__btn {
     width: 20rem;
-      height: 4.3rem;
-      margin-top: 1rem;
-      font-family: $titles;
-      font-size: 1.6rem;
-      color: $white;
-      text-transform: capitalize;
-      text-align: center;
-      border: none;
-      background-color: $green;
-      border-radius: 1rem;
-      grid-column: 1 /3;
-      margin: auto;
-      cursor: pointer;
+    height: 4.3rem;
+    margin-top: 1rem;
+    font-family: $titles;
+    font-size: 1.6rem;
+    color: $white;
+    text-transform: capitalize;
+    text-align: center;
+    border: none;
+    background-color: $green;
+    border-radius: 1rem;
+    grid-column: 1 /3;
+    margin: auto;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
-      @media (min-width: 768px){
-    width: 25rem;
+    @media (min-width: 768px) {
+      width: 25rem;
       height: 5rem;
       font-size: 2rem;
-    } 
+    }
+
+    &:hover {
+      background-color: $orange;
+    }
   }
 
   &__projects-list {
-    
-    align-items: center;
     justify-content: center;
     border-top: solid white 1px;
     padding: 5rem 0;
@@ -112,8 +112,6 @@
       gap: 6rem;
     }
   }
-
-
 }
 
 .card-links {

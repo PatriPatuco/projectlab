@@ -37,9 +37,9 @@ const CreateCard = () => {
     job: "",
     image: "",
     photo: "",
-  }
+  };
 
-  const [isError, setIsError] = useState('');
+  const [isError, setIsError] = useState("");
   const [inputMessage, setInputMessage] = useState({});
   const [cardMessage, setCardMessage] = useState({});
 
@@ -54,12 +54,12 @@ const CreateCard = () => {
   const handleInput = (ev) => {
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
-     const textValidation = /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$/;
+    const textValidation = /^[A-Za-zñÑáéíóúÁÉÍÓÚüÜïÏç.,-_\s]*$/;
     const linkValidation =
       /^((https?|ftp|file):\/\/)?([\da-z.-]+).([a-z.]{2,6})([/\w .-]*)*\/?$/;
     if (inputName === "name") {
       setData({ ...data, name: inputValue });
-      if (inputValue === '') {
+      if (inputValue === "") {
         setInputMessage({
           ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
@@ -72,7 +72,7 @@ const CreateCard = () => {
       }
     } else if (inputName === "slogan") {
       setData({ ...data, slogan: inputValue });
-      if (inputValue === '') {
+      if (inputValue === "") {
         setInputMessage({
           ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
@@ -111,7 +111,7 @@ const CreateCard = () => {
       }
     } else if (inputName === "technologies") {
       setData({ ...data, technologies: inputValue });
-      if (inputValue === '') {
+      if (inputValue === "") {
         setInputMessage({
           ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
@@ -124,7 +124,7 @@ const CreateCard = () => {
       }
     } else if (inputName === "desc") {
       setData({ ...data, desc: inputValue });
-      if (inputValue === '') {
+      if (inputValue === "") {
         setInputMessage({
           ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
@@ -137,7 +137,7 @@ const CreateCard = () => {
       }
     } else if (inputName === "autor" && textValidation.test(inputValue)) {
       setData({ ...data, autor: inputValue });
-      if (inputValue === '') {
+      if (inputValue === "") {
         setInputMessage({
           ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
@@ -150,7 +150,7 @@ const CreateCard = () => {
       }
     } else if (inputName === "job" && textValidation.test(inputValue)) {
       setData({ ...data, job: inputValue });
-      if (inputValue === '') {
+      if (inputValue === "") {
         setInputMessage({
           ...inputMessage,
           [inputName]: `Este campo es obligatorio`,
@@ -164,59 +164,30 @@ const CreateCard = () => {
     }
   };
 
-/* const handleClickCreateCard = (ev) => {
-  ev.preventDefault();
-  console.log(data);
-
-  // Realizar verificación adicional de campos vacíos aquí
-  
-
-  api.dataApi(data).then((responseData) => {
-    console.log(responseData); // Verifica el contenido de la respuesta
-    if (responseData && responseData.success) {
-      console.log("Success response received");
-      setUrl(responseData.cardURL);
-      setCardMessage({
-        type: "success",
-        text: "La tarjeta ha sido creada.",
-      });
-      setIsError('');
-      setData(defaultCard);
-    } else {
-      setIsError(`Ocurrió un error inesperado ${responseData.error}`);
-      setCardMessage({
-        type: "error",
-        text: `Ocurrió un error inesperado ${responseData.error}`,
-      });
-    }
-  });
-}; */
-
-
-const handleClickCreateCard = (ev) => {
-  ev.preventDefault();
-  console.log(data);
-  api.dataApi(data).then((info) => {
-    console.log(info); // info es igual a data.cardURL
-    if (info === undefined) {
-      setIsError("Faltan datos por rellenar");
-    } else {
-      setUrl(info);
-      setIsError("La tarjeta ha sido creada");
-    }
-  });
-};
+  const handleClickCreateCard = (ev) => {
+    ev.preventDefault();
+    console.log(data);
+    api.dataApi(data).then((info) => {
+      console.log(info); // info es igual a data.cardURL
+      if (info === undefined) {
+        setIsError("Faltan datos por rellenar");
+      } else {
+        setUrl(info);
+        setIsError("La tarjeta ha sido creada");
+      }
+    });
+  };
 
   const handleResetEvent = (ev) => {
     ev.preventDefault();
-    console.log('reset');
+    console.log("reset");
     setData(defaultCard);
-    ls.remove('cards');
-    setUrl('');
-    setIsError('');
+    ls.remove("cards");
+    setUrl("");
+    setIsError("");
     setInputMessage({});
     setCardMessage({});
-  }
+  };
 
   return (
     <main className="main">
@@ -251,5 +222,3 @@ const handleClickCreateCard = (ev) => {
 };
 
 export default CreateCard;
-
-
